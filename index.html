@@ -1,326 +1,9 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-#kte-mobile,
-#kte-mobile * {
-  box-sizing: border-box;
-}
-
-#kte-mobile {
-  --green: #20d49a;
-  --gold: #f2d27a;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  max-width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: #fff;
-  background: #030706;
-  font-family: "Poppins", sans-serif;
-}
-
-#kte-mobile .kte-phone {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  max-width: 450px;
-  min-height: 100svh;
-  min-height: max(100svh, 177.778vw);
-  margin: 0 auto;
-  padding: 26px 20px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 15% 15%, rgba(32,212,154,.18), transparent 40%),
-    radial-gradient(circle at 90% 85%, rgba(242,210,122,.13), transparent 40%),
-    linear-gradient(155deg, #030706, #071511 55%, #060908);
-}
-
-#kte-mobile .kte-phone::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: 35px 35px;
-}
-
-#kte-mobile .kte-glow {
-  position: absolute;
-  z-index: -1;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  filter: blur(65px);
-  background: rgba(32,212,154,.2);
-  top: -90px;
-  right: -80px;
-  animation: kteFloat 7s ease-in-out infinite alternate;
-}
-
-#kte-mobile .kte-badge {
-  max-width: 100%;
-  margin: 0 0 22px;
-  padding: 7px 11px;
-  border: 1px solid rgba(32,212,154,.35);
-  border-radius: 999px;
-  color: #a9f3d9;
-  background: rgba(32,212,154,.07);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-
-#kte-mobile .kte-logo {
-  flex-shrink: 0;
-  width: 82px;
-  height: 82px;
-  margin: 0 0 21px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255,255,255,.5);
-  border-radius: 23px;
-  color: #06110e;
-  background: linear-gradient(135deg, #f2d27a, #fff1bb 40%, #20d49a);
-  box-shadow: 0 12px 35px rgba(32,212,154,.2);
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: -2px;
-}
-
-#kte-mobile h1 {
-  width: 100%;
-  margin: 0 !important;
-  color: #fff !important;
-  font-family: "Poppins", sans-serif !important;
-  font-size: clamp(32px, 10vw, 44px) !important;
-  font-weight: 900 !important;
-  letter-spacing: -1px !important;
-  line-height: 1.1 !important;
-  text-align: center !important;
-}
-
-#kte-mobile h1 span {
-  display: block;
-  color: #20d49a;
-  background: linear-gradient(100deg, #20d49a, #a5f6dc, #f2d27a);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#kte-mobile .kte-text {
-  width: 100%;
-  max-width: 340px;
-  margin: 17px 0 0;
-  color: #aabbb5;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-#kte-mobile .kte-features {
-  width: 100%;
-  margin: 19px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-}
-
-#kte-mobile .kte-chip {
-  padding: 6px 8px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-  background: rgba(255,255,255,.035);
-  color: #dbe7e3;
-  font-size: 9px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-#kte-mobile .kte-cta {
-  position: relative;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 340px;
-  min-height: 52px;
-  margin: 24px 0 0;
-  padding: 14px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.4);
-  border-radius: 14px;
-  background: linear-gradient(105deg, #20d49a, #79edc8 52%, #f2d27a);
-  color: #04110d !important;
-  box-shadow: 0 12px 30px rgba(32,212,154,.23);
-  font-family: "Poppins", sans-serif !important;
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.5;
-  text-decoration: none !important;
-  text-transform: uppercase;
-}
-
-#kte-mobile .kte-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 -100%;
-  width: 50%;
-  transform: skewX(-25deg);
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
-  animation: kteShine 3.1s infinite;
-}
-
-#kte-mobile .kte-cta svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-#kte-mobile .kte-cta svg,
-#kte-mobile .kte-cta span {
-  position: relative;
-  z-index: 1;
-}
-
-#kte-mobile .kte-learning {
-  width: 100%;
-  max-width: 340px;
-  margin-top: 23px;
-  padding: 16px 12px;
-  border: 1px solid rgba(242,210,122,.2);
-  border-radius: 16px;
-  background: rgba(3,11,9,.65);
-}
-
-#kte-mobile .kte-learning h2 {
-  margin: 0 !important;
-  color: #fff !important;
-  font-family: "Poppins", sans-serif !important;
-  font-size: 17px !important;
-  line-height: 1.4 !important;
-}
-
-#kte-mobile .kte-learning p {
-  margin: 8px 0 0;
-  color: #8fa59e;
-  font-size: 10px;
-  line-height: 1.6;
-}
-
-#kte-mobile .kte-notice {
-  max-width: 340px;
-  margin-top: 22px;
-  color: #7f918b;
-  font-size: 9px;
-  line-height: 1.6;
-}
-
-#kte-mobile .kte-footer {
-  margin-top: 12px;
-  color: #cdd8d4;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-@keyframes kteFloat {
-  to { transform: translate(-25px, 30px); }
-}
-
-@keyframes kteShine {
-  0%,55% { left: -100%; }
-  85%,100% { left: 150%; }
-}
-
-@media (min-width: 451px) {
-  #kte-mobile .kte-phone {
-    min-height: 800px;
-  }
-}
-
-@media (max-width: 350px) {
-  #kte-mobile .kte-phone {
-    padding: 22px 14px 16px;
-  }
-
-  #kte-mobile h1 {
-    font-size: 32px !important;
-  }
-
-  #kte-mobile .kte-chip {
-    font-size: 8px;
-    padding: 6px 7px;
-  }
-}
-</style>
-
-<section id="kte-mobile">
-  <div class="kte-phone">
-    <div class="kte-glow"></div>
-
-    <p class="kte-badge">Official Telegram Community</p>
-
-    <div class="kte-logo">KT</div>
-
-    <h1>
-      KARAN
-      <span>TRADING</span>
-      <span>EXPERT</span>
-    </h1>
-
-    <p class="kte-text">
-      Learn with the community through educational market insights,
-      practical trading discussions and regular updates.
-    </p>
-
-    <div class="kte-features">
-      <span class="kte-chip">Market Education</span>
-      <span class="kte-chip">Trading Insights</span>
-      <span class="kte-chip">Community Updates</span>
-    </div>
-
-    <a class="kte-cta"
-       href="https://t.me/+p_jTvhS7efJkNzM1"
-       target="_blank"
-       rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M21.55 3.24a1.45 1.45 0 0 0-1.48-.2L2.86 9.69c-1.18.46-1.16 1.16-.21 1.45l4.42 1.38 10.23-6.45c.48-.3.93-.14.56.19l-8.29 7.48-.32 4.39c.46 0 .66-.21.92-.46l2.12-2.06 4.41 3.26c.81.45 1.4.22 1.6-.75L21 5.38c.27-1.22-.12-1.8.55-2.14Z"/>
-      </svg>
-      <span>Join Telegram Channel</span>
-    </a>
-
-    <div class="kte-learning">
-      <h2>Build Skills.<br>Trade Responsibly.</h2>
-      <p>
-        Community learning for people interested in understanding
-        the markets.
-      </p>
-    </div>
-
-    <div class="kte-notice">
-      18+ only · Trading involves risk. Content is for educational
-      purposes and is not financial advice.
-    </div>
-
-    <div class="kte-footer">ADS BY FLOX ADS</div>
-  </div>
-</section>
-<!-- Meta Pixel Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -330,42 +13,230 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1788431545823274');
+fbq('init', '1860395601783633');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1788431545823274&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1860395601783633&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUMIT BHAI COMMUNITY</title>
 
-<script>
-(function () {
-  var tags = document.querySelectorAll('meta[name="viewport"]');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-  if (!tags.length) {
-    var tag = document.createElement("meta");
-    tag.name = "viewport";
-    tag.content = "width=device-width, initial-scale=1";
-    document.head.appendChild(tag);
-  } else {
-    tags.forEach(function (tag) {
-      tag.content = "width=device-width, initial-scale=1";
-    });
-  }
-})();
-</script>
-<script>
-document.addEventListener('click', function(e) {
-  var link = e.target.closest('a');
-  if (link && link.href.includes('https://t.me/+p_jTvhS7efJkNzM1')) {
-    fbq('track', 'Subscribe');
-  }
-});
-</script>
-<script>
-document.getElementById('joinBtn').addEventListener('click', function() {
-  fbq('track', 'Lead');
-  fbq('track', 'Subscribe');
-});
-</script>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #050713;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 25%, #123b81 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, #50105f 0%, transparent 40%),
+    #050713;
+}
+
+.glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: .4;
+  z-index: -1;
+  animation: move 8s infinite alternate ease-in-out;
+}
+
+.glow.one {
+  background: #006eff;
+  top: 5%;
+  left: -100px;
+}
+
+.glow.two {
+  background: #a000ff;
+  right: -100px;
+  bottom: 5%;
+  animation-delay: -4s;
+}
+
+@keyframes move {
+  to { transform: translate(100px, 80px) scale(1.3); }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 18px;
+  text-align: center;
+}
+
+.content {
+  max-width: 650px;
+  width: 100%;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  width: 125px;
+  height: 125px;
+  margin: 0 auto 25px;
+  border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg,#167bff,#7514dc);
+  border: 2px solid #76baff;
+  box-shadow: 0 0 35px #087bff88;
+  font-size: 43px;
+  font-weight: 900;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #438dff;
+  border-radius: 30px;
+  color: #9bcaff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(36px, 8vw, 65px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg,#fff,#65b7ff,#c58bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #b8c4dc;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 490px;
+  margin: 0 auto 30px;
+}
+
+.telegram-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 16px 35px;
+  border-radius: 50px;
+  background: linear-gradient(100deg,#087cff,#6545ff);
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0 0 28px #167bff77;
+  transition: .3s;
+}
+
+.telegram-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 45px #167bff;
+}
+
+.notice {
+  margin: 35px auto 0;
+  max-width: 470px;
+  padding: 17px;
+  border: 1px solid #343d58;
+  background: #10172a99;
+  border-radius: 14px;
+  color: #aab8d0;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+footer {
+  margin-top: 35px;
+  color: #77849e;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+footer strong {
+  color: #8dbbff;
+}
+
+@media(max-width:480px) {
+  .logo { width: 105px; height: 105px; font-size: 35px; }
+  .telegram-btn { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<main class="container">
+  <div class="content">
+
+    <div class="logo">SB</div>
+
+    <div class="tag">✦ OFFICIAL COMMUNITY ✦</div>
+
+    <h1>SUMIT BHAI<br>COMMUNITY</h1>
+
+    <p class="description">
+      Welcome to the official community.
+      Get community updates, educational information
+      and announcements in one place.
+    </p>
+
+    <a class="telegram-btn"
+       href="https://t.me/+SbEB4XsQJVYyY2Rl"
+       target="_blank"
+       rel="noopener noreferrer">
+       ✈ JOIN TELEGRAM
+    </a>
+
+    <div class="notice">
+      <strong>IMPORTANT INFORMATION</strong><br>
+      All information is for general educational
+      purposes only. No profit or financial returns
+      are guaranteed. Always verify information
+      independently and understand the risks.
+    </div>
+
+    <footer>
+      POWERED BY <strong>FLOX ADS</strong>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>
